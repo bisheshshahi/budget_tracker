@@ -89,7 +89,6 @@ function displaySummary(dateFrom, dateTo) {
     Total Balance:${incomeCash + incomeBank - expenseCash - expenseBank}
     `);
 }
-displaySummary("2026/01/01", "2026/03/01");
 
 // function to delete transaction based on id
 function deleteTransaction(id) {
@@ -142,3 +141,5 @@ addTransaction({
 });
 
 console.log(transactions);
+
+displaySummary("2026/01/01", "2026/03/01");
