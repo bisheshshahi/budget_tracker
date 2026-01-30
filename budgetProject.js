@@ -34,51 +34,6 @@ function addTransaction({
   transactions.push(transaction);
 }
 
-// Income here
-addTransaction({
-  amount: 8000,
-  type: "income",
-  description: "of Dec and Jan",
-  flow: "cash",
-  date: new Date("2026/01/18"),
-});
-
-addTransaction({
-  amount: 2000,
-  type: "income",
-  description: "loan",
-  flow: "bank",
-  date: new Date("2026/01/18"),
-});
-
-// Expenses start here
-
-addTransaction({
-  amount: 360,
-  type: "expense",
-  description: "momo",
-  flow: "cash",
-  date: new Date("2026/01/21"),
-});
-
-addTransaction({
-  amount: 280,
-  type: "expense",
-  description: "momo",
-  flow: "bank",
-  date: new Date("2026/01/22"),
-});
-
-addTransaction({
-  amount: 200,
-  type: "expense",
-  description: "pool",
-  flow: "cash",
-  date: new Date("2026/01/22"),
-});
-
-console.log(transactions);
-
 // calculate income and expense
 
 function calculateTotal(type, flow, dateFrom, dateTo) {
@@ -128,7 +83,7 @@ function displaySummary(dateFrom, dateTo) {
     Bank Income: ${incomeBank}
     Cash Expense:${expenseCash}
     Bank Expense:${expenseBank}
-
+    
     Balance in cash:${incomeCash - expenseCash}
     Balance in bank:${incomeBank - expenseBank}
     Total Balance:${incomeCash + incomeBank - expenseCash - expenseBank}
@@ -142,3 +97,48 @@ function deleteTransaction(id) {
   transactions.splice(index, 1);
 }
 // deleteTransaction(3);
+
+// Income here
+addTransaction({
+  amount: 8000,
+  type: "income",
+  description: "of Dec and Jan",
+  flow: "cash",
+  date: new Date("2026/01/18"),
+});
+
+addTransaction({
+  amount: 2000,
+  type: "income",
+  description: "loan",
+  flow: "bank",
+  date: new Date("2026/01/18"),
+});
+
+// Expenses start here
+
+addTransaction({
+  amount: 360,
+  type: "expense",
+  description: "momo",
+  flow: "cash",
+  date: new Date("2026/01/21"),
+});
+
+addTransaction({
+  amount: 280,
+  type: "expense",
+  description: "momo",
+  flow: "bank",
+  date: new Date("2026/01/22"),
+});
+
+addTransaction({
+  amount: 200,
+  type: "expense",
+  description: "pool",
+  flow: "cash",
+  date: new Date("2026/01/22"),
+});
+
+console.log(transactions);
