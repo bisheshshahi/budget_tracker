@@ -15,7 +15,6 @@ function addTransaction({
     type,
     description,
     flow,
-    date,
   };
 
   transactions.push(transaction);
