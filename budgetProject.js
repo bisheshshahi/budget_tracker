@@ -140,6 +140,12 @@ addTransaction({
   date: new Date("2026/01/22"),
 });
 
+// addTransaction({
+//   amount: 500,
+//   type: "expenses", //checking error
+//   flow: "cash",
+// });
+
 console.log(transactions);
 
 displaySummary("2026/01/01", "2026/03/01");
