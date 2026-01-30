@@ -8,6 +8,21 @@ function addTransaction({
   flow,
   date = new Date(),
 }) {
+  type = type.toLowerCase();
+  flow = flow.toLowerCase();
+
+  if (!["income", "expense"].includes(type)) {
+    throw new Error("Type must be 'income' or 'expense'");
+  }
+
+  if (!["cash", "bank"].includes(flow)) {
+    throw new Error("Flow must be 'cash' or 'bank'");
+  }
+
+  if (isNaN(amount) || amount <= 0) {
+    throw new Error("Amount must be a positive number");
+  }
+
   const transaction = {
     id: id++,
     amount,
@@ -16,9 +31,9 @@ function addTransaction({
     description,
     flow,
   };
-
   transactions.push(transaction);
 }
+
 // Income here
 addTransaction({
   amount: 8000,
